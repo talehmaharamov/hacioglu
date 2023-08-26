@@ -1,0 +1,13 @@
+
+
+#blog-body-text ul li {
+    margin-left: 40px;
+    list-style: outside;
+}
+
+#blog-body-text ol li {
+    margin-left: 40px;
+    list-style: decimal;
+}
+
+

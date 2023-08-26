@@ -18,7 +18,7 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
     Route::post('change-category', [App\Http\Controllers\Backend\ContentController::class, 'changeCategory'])->name('changeCategory');
     Route::post('change-alt-category', [App\Http\Controllers\Backend\ContentController::class, 'changeAltCategory'])->name('changeAltCategory');
     Route::get('/generate-sitemap', function () {
-        SitemapGenerator::create('https://zuhurgroup.az')->writeToFile(public_path('sitemap.xml'));
+        SitemapGenerator::create('https://hacioglugroup.az')->writeToFile(public_path('sitemap.xml'));
     });
     Route::get('delete/photo/{model}/{id}', [App\Http\Controllers\Backend\HomeController::class, 'deletePhoto'])->name('deletePhoto');
     Route::group(['name' => 'status'], function () {

@@ -4,18 +4,24 @@
     @include('frontend.includes.meta')
     @include('frontend.includes.styles')
 </head>
-<body data-plugin-page-transition>
+<body>
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTS968RL"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
-<div class="body">
+@include('frontend.includes.sidebar')
+<div class="page-wrapper boxed_wrapper">
+    @include('frontend.includes.sidebar')
     @include('frontend.includes.header')
     @yield('front')
+{{--    @include('frontend.layouts.carousel')--}}
+    @include('frontend.layouts.faq')
     @include('frontend.includes.footer')
-    @include('sweetalert::alert')
-    @include('frontend.includes.scripts')
 </div>
+
+@include('sweetalert::alert')
+@include('frontend.includes.scripts')
 @yield('scripts')
+
 </body>
 </html>
