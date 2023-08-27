@@ -38,8 +38,41 @@
                                                         {!! validation_response('backend.description') !!}
                                                     </div>
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label>@lang('backend.short-description') <span
+                                                            class="text-danger">*</span></label>
+                                                    <textarea name="short_description[{{ $lan->code }}]"
+                                                              id="elm{{$lan->code}}2"
+                                                              class="form-control"
+                                                              required="">{{ $blog->translate($lan->code)->short_description ?? '' }}</textarea>
+                                                    {!! validation_response('backend.short-description') !!}
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>@lang('backend.title')(Meta)</label>
+                                                    <input name="meta_title[{{ $lan->code }}]" type="text"
+                                                           class="form-control"
+                                                           value="{{ $blog->translate($lan->code)->meta_title ?? '' }}">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>@lang('backend.description')(Meta)</label>
+                                                    <textarea name="meta_description[{{ $lan->code }}]" type="text"
+                                                              class="form-control" id="elm{{$lan->code}}2"
+                                                              rows="5">{!!   $blog->translate($lan->code)->meta_description ?? '' !!}</textarea>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label>@lang('backend.alt')</label>
+                                                    <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                              class="form-control"
+                                                              rows="5">{{ $blog->translate($lan->code)->alt ?? '' }}</textarea>
+                                                </div>
                                             </div>
                                         @endforeach
+                                        <div class="mb-3">
+                                            <label>@lang('backend.slug') <span class="text-danger">*</span></label>
+                                            <input name="slug" type="text" id="slug" class="form-control" required
+                                                   value="{{ $blog->slug }}">
+                                            {!! validation_response('backend.slug') !!}
+                                        </div>
                                         <div class="mb-3">
                                             <label>@lang('backend.photo') <span class="text-danger">*</span></label>
                                             <input name="photo" type="file"
@@ -83,4 +116,16 @@
 @section('scripts')
     @include('backend.templates.components.tiny')
     @include('backend.templates.components.preview-images')
+    <script>
+        $(document).ready(function () {
+            function generateSlugFromName() {
+                const nameInputValue = $('#nameen').val();
+                const slugInput = $('#slug');
+                const slug = nameInputValue.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                slugInput.val(slug);
+            }
+
+            $('#nameen').on('input', generateSlugFromName);
+        });
+    </script>
 @endsection

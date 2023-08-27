@@ -26,6 +26,14 @@
                         </a>
                     </li>
                 @endcan
+                @can('blog index')
+                    <li>
+                        <a href="{{ route('backend.blog.index') }}" class="waves-effect">
+                            <i class="fas fa-blog"></i>
+                            <span>@lang('backend.blog')</span>
+                        </a>
+                    </li>
+                @endcan
                 @can('categories index')
                     <li>
                         <a href="{{ route('backend.categories.index') }}" class="waves-effect">

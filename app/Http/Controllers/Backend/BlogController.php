@@ -30,27 +30,28 @@ class BlogController extends Controller
     {
         check_permission('blog create');
         try {
-            $blog = new Blog();
-            $blog->photo = upload('blog', $request->file('photo'));
-            $blog->save();
-            foreach (active_langs() as $lang) {
-                $translation = new BlogTranslation();
-                $translation->locale = $lang->code;
-                $translation->blog_id = $blog->id;
-                $translation->name = $request->name[$lang->code];
-                $translation->meta_title = $request->meta_title[$lang->code];
-                $translation->meta_description = $request->meta_description[$lang->code];
-                $translation->alt = $request->alt[$lang->code];
-                $translation->description = $request->description[$lang->code];
-                $translation->save();
-            }
-            if ($request->hasFile('photos')) {
-                foreach (multi_upload('blog', $request->file('photos')) as $photo) {
-                    $blogPhoto = new BlogPhotos();
-                    $blogPhoto->photo = $photo;
-                    $blog->photos()->save($blogPhoto);
-                };
-            }
+        $blog = new Blog();
+        $blog->photo = upload('blog', $request->file('photo'));
+        $blog->slug = $request->slug;
+        $blog->save();
+        foreach (active_langs() as $lang) {
+            $translation = new BlogTranslation();
+            $translation->locale = $lang->code;
+            $translation->blog_id = $blog->id;
+            $translation->name = $request->name[$lang->code];
+            $translation->meta_title = $request->meta_title[$lang->code];
+            $translation->meta_description = $request->meta_description[$lang->code];
+            $translation->alt = $request->alt[$lang->code];
+            $translation->description = $request->description[$lang->code];
+            $translation->save();
+        }
+        if ($request->hasFile('photos')) {
+            foreach (multi_upload('blog', $request->file('photos')) as $photo) {
+                $blogPhoto = new BlogPhotos();
+                $blogPhoto->photo = $photo;
+                $blog->photos()->save($blogPhoto);
+            };
+        }
             alert()->success(__('messages.success'));
             return redirect(route('backend.blog.index'));
         } catch (Exception $e) {

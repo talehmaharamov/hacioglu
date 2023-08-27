@@ -36,7 +36,8 @@
                             <form action="#">
                                 <select id="polyglot-language-options">
                                     @foreach(active_langs() as $lang)
-                                        <option id="{{ $lang->code }}" value="{{ $lang->code }}">{{ Str::upper($lang->code) }}</option>
+                                        <option id="{{ $lang->code }}"
+                                                value="{{ $lang->code }}">{{ Str::upper($lang->code) }}</option>
                                     @endforeach
                                 </select>
                             </form>
@@ -82,25 +83,19 @@
                                     </li>
                                 @endforeach
                                 <li>
-                                    <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.blogs')</a>
+                                    <a href="{{ route('frontend.blogs') }}">@lang('backend.blogs')</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.about')</a>
+                                    <a href="{{ route('frontend.about') }}">@lang('backend.about')</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.contact-us')</a>
                                 </li>
                             </ul>
                         </div>
-
                         <div class="box-search-style1">
                             <a href="#" class="search-toggler">
                                 <img src="{{asset('frontend/images/icon/icon-2__searchbar.png')}}" alt="">
-                            </a>
-                        </div>
-                        <div class="side-content-button">
-                            <a class="navSidebar-button" href="#">
-                                <img src="{{asset('frontend/images/icon/icon-1__menubar.png')}}" alt="">
                             </a>
                         </div>
                     </div>

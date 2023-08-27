@@ -3,7 +3,7 @@
 
 .language-switcher {
     position: relative;
-    width: 95px;
+    width: 75px;
     height: 35px;
     display: block;
     padding: 0px 0px;
@@ -111,8 +111,8 @@
     border-radius: 5px 5px 10px 10px;
     z-index: 99999;
     background: var(--thm-base);
-    width: 115px;
-    right: 0;
+    width: 95px;
+    right: -10px;
     padding: 7px 10px 10px;
 }
 

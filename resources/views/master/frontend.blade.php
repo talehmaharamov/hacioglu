@@ -3,6 +3,7 @@
 <head>
     @include('frontend.includes.meta')
     @include('frontend.includes.styles')
+    @yield('styles')
 </head>
 <body>
 <noscript>
@@ -15,7 +16,7 @@
     @include('frontend.includes.header')
     @yield('front')
 {{--    @include('frontend.layouts.carousel')--}}
-    @include('frontend.layouts.faq')
+{{--    @include('frontend.layouts.faq')--}}
     @include('frontend.includes.footer')
 </div>
 
