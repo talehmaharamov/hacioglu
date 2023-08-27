@@ -1,43 +1,74 @@
 @foreach($carouselCategories as $cC)
-    <div
-        class="blog-grid-carousel-section section bg-gray pt-40 pt-lg-30 pt-md-20 pt-sm-10 pt-xs-0  pb-5">
+    <section class="project-style4-area">
         <div class="container">
-            <div class="blog-carousel-active row">
-                @foreach($cC->content as $cContent)
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-blog">
-                            <div class="blog-image">
-                                <a href="{{ route('frontend.selectedContent',$cContent->slug) }} "><img
-                                        src="{{ asset($cContent->photo) }}"
-                                        alt="{{ $cContent->translate(app()->getLocale())->alt ?? '' }}">
-                                </a>
-                            </div>
-                            <div class="blog-content">
-                                <h2>
-                                    <a href="{{ route('frontend.selectedContent',$cContent->slug) }} ">
-                                        {{ $cContent->translate(app()->getLocale())->name ?? '' }}
-                                    </a>
-                                </h2>
-                                <ul class="meta">
-                                    <li>
-                                        <i class="fa fa-clock-o"></i>{{ $cContent->created_at->format('d.m.Y')  }}
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-folder-open"></i>
-                                        <a href="#">{{ $cContent->category()->first()->translate(app()->getLocale())->name ?? '' }}</a>
-                                    </li>
-                                </ul>
-                                <p style="word-break: break-all;">{!! $cContent->translate(app()->getLocale())->short_description ?? '' !!}</p>
-                                <a class="read-more-btn" href="{{ route('frontend.selectedContent',$cContent->slug) }}">
-                                    @lang('backend.read-more')
-                                    <i class="fa fa-chevron-right"></i>
-                                </a>
-                            </div>
-                        </div>
+            <div class="sec-title">
+                <div class="sub-title">
+                    <div class="border-left">
+
                     </div>
-                @endforeach
+                </div>
+                <h2>{{ $cC->translate(app()->getLocale())->name ?? '' }}</h2>
             </div>
         </div>
-    </div>
-@endforeach
 
+        <div class="auto-container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="owl-carousel owl-theme thm-owl__carousel project-style3-carousel owl-nav-style-one"
+                         data-owl-options='{
+                            "loop": false,
+                            "autoplay": false,
+                            "margin": 30,
+                            "nav": true,
+                            "dots": false,
+                            "smartSpeed": 500,
+                            "autoplayTimeout": 10000,
+                            "navText": ["<span class=\"left icon-left-arrow\"></span>","<span class=\"right icon-right-arrow\"></span>"],
+                            "responsive": {
+                                    "0": {
+                                        "items": 1
+                                    },
+                                    "768": {
+                                        "items": 2
+                                    },
+                                    "992": {
+                                        "items": 3
+                                    },
+                                    "1200": {
+                                        "items": 4
+                                    }
+                                }
+                            }'>
+                        @foreach($cC->content as $key => $cContent)
+                            <div class="single-service-style7">
+                                <div class="img-holder">
+                                    <div class="inner">
+                                        <img src="{{asset($cContent->photo)}}"
+                                             alt="{{ $cContent->translate(app()->getLocale())->alt ?? '' }}"/>
+                                    </div>
+{{--                                    <div class="icon">--}}
+{{--                                        <span class="icon-roof-1"></span>--}}
+{{--                                    </div>--}}
+                                </div>
+                                <div class="title-holder">
+                                    <h3>
+                                        <a href="{{ route('frontend.selectedContent',$cContent->slug) }}">{{ $cContent->translate(app()->getLocale())->name ?? '' }}</a>
+                                    </h3>
+                                    <div class="text">
+                                        <p>
+                                            {!!   $cContent->translate(app()->getLocale())->short_description ?? '' !!}
+                                        </p>
+                                    </div>
+                                    <div class="btn-box">
+                                        <a href="{{ route('frontend.selectedContent',$cContent->slug) }}">@lang('backend.read-more')
+                                            <span class="icon-right-1"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endforeach
