@@ -23,8 +23,8 @@
 
                     <div class="col-xl-5">
                         <div class="about-style3-img-box">
-                            <div class="inner">
-                                <img src="{{ $about->photo }}"
+                            <div style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" class="inner">
+                                <img  src="{{ $about->photo }}"
                                      alt="{{$about->translate(app()->getLocale())->alt ?? __('backend.translation-not-found')}}"/>
                             </div>
                         </div>

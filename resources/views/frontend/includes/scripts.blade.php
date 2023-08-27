@@ -25,18 +25,19 @@
 <script src="{{ asset('frontend/vendors/extra-scripts/jarallax.min.js')}}"></script>
 <script src="{{ asset('frontend/vendors/extra-scripts/TweenMax.min.js')}}"></script>
 <script src="{{ asset('frontend/js/custom.js')}}"></script>
-
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
-        s1.src = 'https://embed.tawk.to/64d9b8f3cc26a871b02f1172/1h7p7kui9';
+        s1.src = 'https://embed.tawk.to/64eafecca91e863a5c100b85/1h8qv6k0q';
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
     })();
 </script>
+<!--End of Tawk.to Script-->
 <script>(function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({

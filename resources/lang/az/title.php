@@ -4,4 +4,5 @@ return array(
     'index' => 'Ana Səhifə',
     'about' => 'Haqqımızda',
     'contact' => 'Bizimlə Əlaqə',
+    'blog' => 'Bloqlar',
 );

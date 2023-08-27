@@ -3,6 +3,7 @@
 <head>
     @include('frontend.includes.meta')
     @include('frontend.includes.styles')
+    @yield('styles')
 </head>
 <body>
 <noscript>

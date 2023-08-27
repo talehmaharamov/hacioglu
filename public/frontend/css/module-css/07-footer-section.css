@@ -5,16 +5,16 @@
 ***/
 .bottom-parallax {
     position: relative;
-    height: 537px;
+    /*height: 537px;*/
     opacity: 0;
     z-index: -999;
 }
 
 .bottom-parallax .footer-area {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
+    /*position: fixed;*/
+    /*left: 0px;*/
+    /*bottom: 0px;*/
+    /*right: 0px;*/
 
 }
 
