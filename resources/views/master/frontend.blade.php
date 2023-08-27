@@ -15,7 +15,7 @@
     @include('frontend.includes.header')
     @yield('front')
 {{--    @include('frontend.layouts.carousel')--}}
-    @include('frontend.layouts.faq')
+{{--    @include('frontend.layouts.faq')--}}
     @include('frontend.includes.footer')
 </div>
 

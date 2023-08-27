@@ -85,7 +85,7 @@
                                     <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.blogs')</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.about')</a>
+                                    <a href="{{ route('frontend.about') }}">@lang('backend.about')</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('frontend.contact-us-page') }}">@lang('backend.contact-us')</a>

@@ -33,5 +33,10 @@
 <link rel="stylesheet" href="{{ asset('frontend/css/module-css/06-partner-section.css')}}">
 <link rel="stylesheet" href="{{ asset('frontend/css/module-css/07-footer-section.css')}}">
 <link rel="stylesheet" href="{{ asset('frontend/css/module-css/08-blog-section.css')}}">
+<link
+    rel="stylesheet"
+    href="{{asset('frontend/css/module-css/09-breadcrumb-section.css')}}"
+/>
+<link rel="stylesheet" href="{{asset('frontend/css/module-css/10-contact.css')}}" />
 <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}" />
 <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css')}}" />
