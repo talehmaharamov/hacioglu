@@ -36,14 +36,15 @@
                             <form action="#">
                                 <select id="polyglot-language-options">
                                     @foreach(active_langs() as $lang)
-                                        <option id="{{ $lang->code }}"
-                                                value="{{ $lang->code }}">{{ Str::upper($lang->code) }}</option>
+                                        <option id="{{ $lang->code }}" @if(app()->getLocale() == $lang->code) selected @endif
+                                                value="{{ $lang->code }}">
+                                            {{ Str::upper($lang->code) }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -107,3 +108,32 @@
 <div class="stricky-header stricked-menu main-menu">
     <div class="sticky-header__content"></div>
 </div>
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            if ($("#polyglot-language-options").length) {
+                $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
+                    effect: 'slide',
+                    animSpeed: 100,
+                    testMode: true,
+                    onChange: function (evt) {
+                        var selectedLanguage = evt.selectedItem;
+                        var routeUrl = "/change-language";
+                        routeUrl += "/" + encodeURIComponent(selectedLanguage);
+                        $.ajax({
+                            type: "GET",
+                            url: routeUrl,
+                            success: function (response) {
+                                location.reload();
+                            },
+                            error: function (xhr, status, error) {
+                                console.error("AJAX request failed:", status, error);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+    </script>
+@endsection

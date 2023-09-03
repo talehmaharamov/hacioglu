@@ -13,29 +13,29 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'slug' => 'zuhur-construction',
-                'translation' => ['az' => 'Zühur İnşaat', 'en' => 'Zuhur Construction', 'ru' => 'Зухур Строительство'],
+                'translation' => ['az' => 'Hacıoğlu İnşaat', 'en' => 'Hacioglu Construction', 'ru' => 'Хаджиоглу Строительство'],
                 'subcategories' => [
                     [
-                        'slug' => 'repair-and-construction',
-                        'translation' => ['az' => 'Təmir və tikinti', 'en' => 'Repair and construction', 'ru' => 'Ремонт и строительство'],
+                        'slug' => 'repair',
+                        'translation' => ['az' => 'Təmir', 'en' => 'Repair', 'ru' => 'Ремонт'],
                     ],
                     [
-                        'slug' => 'repair-and-design',
-                        'translation' => ['az' => 'Təmir və dizayn', 'en' => 'Repair and design', 'ru' => 'Ремонт и дизайн'],
+                        'slug' => 'construction',
+                        'translation' => ['az' => 'Tikinti', 'en' => 'Construction', 'ru' => 'Строительство'],
                     ],
                     [
-                        'slug' => 'construction-in-a-bowl',
-                        'translation' => ['az' => 'Qaba tikinti', 'en' => 'Construction in a bowl', 'ru' => 'Строительство в чаше'],
+                        'slug' => 'design',
+                        'translation' => ['az' => 'Dizayn', 'en' => 'Design', 'ru' => 'Дизайн'],
                     ],
                 ]
             ],
             [
                 'slug' => 'first1',
-                'translation' => ['az' => 'Zühur Təmizlik', 'en' => 'Zuhur Cleaning', 'ru' => 'Зухур Чистота'],
+                'translation' => ['az' => 'Hacıoğlu mebel', 'en' => 'Hacioglu furniture', 'ru' => 'Мебель Хаджиоглу'],
                 'subcategories' => [
                     [
-                        'slug' => 'cleaning-service',
-                        'translation' => ['az' => 'Təmizlik xidməti', 'en' => 'Cleaning service', 'ru' => 'Услуги по уборке'],
+                        'slug' => 'furniture',
+                        'translation' => ['az' => 'Mebel', 'en' => 'Hacioglu furniture', 'ru' => 'Мебель'],
                     ],
                 ]
             ],

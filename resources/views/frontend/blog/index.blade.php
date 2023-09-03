@@ -9,6 +9,18 @@
                 </div>
                 <h2>@lang('backend.blogs')</h2>
             </div>
+            <div class="page-search flex-between" >
+                <div class="result">
+                    <p>{{ __('pagination.showing_results', ['firstItem' => $blogs->firstItem(), 'lastItem' => $blogs->lastItem(), 'total' => $blogs->total() ]) }}</p>
+                @if($blogs->isEmpty())
+                        <p class="mt-4">@lang('messages.info-not-found')</p>
+                    @endif
+                </div>
+                <div class="search-box flex-between">
+                    <input type="text" placeholder="@lang('backend.search')" />
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
             <div class="row">
                 @foreach($blogs as $blog)
                     <div class="col-xl-4 col-lg-6 col-md-6">
@@ -36,13 +48,13 @@
                         </div>
                     </div>
                 @endforeach
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <ul class="styled-pagination pdtop0 clearfix">
-                                {{ $blogs->links('frontend.custom-pagination') }}
-                            </ul>
-                        </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <ul class="styled-pagination pdtop0 clearfix">
+                            {{ $blogs->links('frontend.custom-pagination') }}
+                        </ul>
                     </div>
+                </div>
 
             </div>
         </div>
