@@ -144,18 +144,18 @@
 
     //===Language switcher===
     function languageSwitcher() {
-        if ($("#polyglot-language-options").length) {
-            $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
-                effect: 'slide',
-                animSpeed: 100,
-                testMode: true,
-                onChange: function (evt) {
-                    alert("The selected language is: " + evt.selectedItem);
-                }
-
-            });
-        }
-        ;
+        // if ($("#polyglot-language-options").length) {
+        //     $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
+        //         effect: 'slide',
+        //         animSpeed: 100,
+        //         testMode: true,
+        //         onChange: function (evt) {
+        //             alert("The selected language is: " + evt.selectedItem);
+        //         }
+        //
+        //     });
+        // }
+        // ;
     }
 
 

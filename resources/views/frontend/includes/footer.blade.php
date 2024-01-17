@@ -64,7 +64,7 @@
     <div class="search-popup__content">
         <form action="#">
             <label for="search" class="sr-only">search here</label>
-            <input type="text" id="search" placeholder="Search Here..." />
+            <input type="text" id="search" placeholder="@lang('backend.search')" />
             <button type="submit" aria-label="search submit" class="thm-btn">
                 <i class="icon-search-interface-symbol"></i>
             </button>
